@@ -16,5 +16,34 @@ namespace MovieLib.Windows
         {
             InitializeComponent();
         }
+
+        private void miMoviesAdd_Click( object sender, EventArgs e )
+        {
+            var movieDetailsForm = new MovieDetail();
+            var result = movieDetailsForm.ShowDialog();
+        }
+
+        private void miMoviesEdit_Click( object sender, EventArgs e )
+        {
+            var movieDetailsForm = new MovieDetail();
+            var result = movieDetailsForm.ShowDialog();
+        }
+
+        private void miMoviesDelete_Click( object sender, EventArgs e )
+        {
+            var movieDetailsForm = new MovieDetail();
+            var result = movieDetailsForm.ShowDialog();
+        }
+
+        private void miHelpAbout_Click( object sender, EventArgs e )
+        {
+            var aboutForm = new MovieDetail();
+            var result = aboutForm.ShowDialog();
+        }
+
+        private void miFileExit_Click( object sender, EventArgs e )
+        {
+            Close();
+        }
     }
 }
