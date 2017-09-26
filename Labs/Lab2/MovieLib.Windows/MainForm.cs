@@ -38,7 +38,7 @@ namespace MovieLib.Windows
         private void miHelpAbout_Click( object sender, EventArgs e )
         {
             var aboutForm = new MovieDetail();
-            var result = aboutForm.ShowDialog();
+            aboutForm.ShowDialog();
         }
 
         private void miFileExit_Click( object sender, EventArgs e )

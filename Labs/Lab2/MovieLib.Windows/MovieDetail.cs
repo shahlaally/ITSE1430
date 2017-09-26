@@ -25,10 +25,7 @@ namespace MovieLib.Windows
 
         }
 
-        private void label4_Click( object sender, EventArgs e )
-        {
-
-        }
+        
 
         private void btnSave_Click( object sender, EventArgs e )
         {
