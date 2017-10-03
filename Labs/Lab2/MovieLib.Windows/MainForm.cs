@@ -19,20 +19,20 @@ namespace MovieLib.Windows
 
         private void miMoviesAdd_Click( object sender, EventArgs e )
         {
-            var movieDetailsForm = new MovieDetail();
-            var result = movieDetailsForm.ShowDialog();
+            var child = new MovieDetail();
+            var result = child.ShowDialog();
         }
 
         private void miMoviesEdit_Click( object sender, EventArgs e )
         {
-            var movieDetailsForm = new MovieDetail();
-            var result = movieDetailsForm.ShowDialog();
+            var child = new MovieDetail();
+            var result = child.ShowDialog();
         }
 
         private void miMoviesDelete_Click( object sender, EventArgs e )
         {
-            var movieDetailsForm = new MovieDetail();
-            var result = movieDetailsForm.ShowDialog();
+            var child = new MovieDetail();
+            var result =child.ShowDialog();
         }
 
         private void miHelpAbout_Click( object sender, EventArgs e )

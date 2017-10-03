@@ -20,19 +20,20 @@ namespace MovieLib.Windows
         //public Movie editedMovie = null;
         //public Movie novieToEdit;
 
-        public void on_load()
+        protected override void OnLoad( EventArgs e )
+        {
+            base.OnLoad(e);
+
+        }
+
+
+
+        private void OnSave( object sender, EventArgs e )
         {
 
         }
 
-        
-
-        private void btnSave_Click( object sender, EventArgs e )
-        {
-
-        }
-
-        private void btnCancel_Click( object sender, EventArgs e )
+        private void OnCancel( object sender, EventArgs e )
         {
             Close();
         }
