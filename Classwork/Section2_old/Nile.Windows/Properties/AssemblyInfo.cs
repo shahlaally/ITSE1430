@@ -8,8 +8,8 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("Nile.Windows")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("TCCD")]
-[assembly: AssemblyProduct("Nile")]
+[assembly: AssemblyCompany("")]
+[assembly: AssemblyProduct("Nile.Windows")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8f5366fa-58d9-4dd3-89c7-66975a72f676")]
+[assembly: Guid("4679615d-03a1-4fd3-9a98-9f98b1db46c8")]
 
 // Version information for an assembly consists of the following four values:
 //
