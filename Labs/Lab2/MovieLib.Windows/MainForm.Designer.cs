@@ -65,7 +65,7 @@
             this.miFileExit.Name = "miFileExit";
             this.miFileExit.Size = new System.Drawing.Size(152, 22);
             this.miFileExit.Text = "&Exit";
-            this.miFileExit.Click += new System.EventHandler(this.miFileExit_Click);
+            this.miFileExit.Click += new System.EventHandler(this.OnFileExit);
             // 
             // miMovies
             // 
@@ -82,21 +82,21 @@
             this.miMoviesAdd.Name = "miMoviesAdd";
             this.miMoviesAdd.Size = new System.Drawing.Size(152, 22);
             this.miMoviesAdd.Text = "&Add";
-            this.miMoviesAdd.Click += new System.EventHandler(this.miMoviesAdd_Click);
+            this.miMoviesAdd.Click += new System.EventHandler(this.OnMovieAdd);
             // 
             // miMoviesEdit
             // 
             this.miMoviesEdit.Name = "miMoviesEdit";
             this.miMoviesEdit.Size = new System.Drawing.Size(152, 22);
             this.miMoviesEdit.Text = "&Edit";
-            this.miMoviesEdit.Click += new System.EventHandler(this.miMoviesEdit_Click);
+            this.miMoviesEdit.Click += new System.EventHandler(this.OnMovieEdit);
             // 
             // miMoviesDelete
             // 
             this.miMoviesDelete.Name = "miMoviesDelete";
             this.miMoviesDelete.Size = new System.Drawing.Size(152, 22);
             this.miMoviesDelete.Text = "&Delete";
-            this.miMoviesDelete.Click += new System.EventHandler(this.miMoviesDelete_Click);
+            this.miMoviesDelete.Click += new System.EventHandler(this.OnMovieDelete);
             // 
             // miHelp
             // 
@@ -111,7 +111,7 @@
             this.miHelpAbout.Name = "miHelpAbout";
             this.miHelpAbout.Size = new System.Drawing.Size(152, 22);
             this.miHelpAbout.Text = "&About";
-            this.miHelpAbout.Click += new System.EventHandler(this.miHelpAbout_Click);
+            this.miHelpAbout.Click += new System.EventHandler(this.OnHelpAbout);
             // 
             // MainForm
             // 

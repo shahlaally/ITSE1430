@@ -21,33 +21,62 @@ namespace MovieLib.Windows
             InitializeComponent();
         }
 
-        private void miMoviesAdd_Click( object sender, EventArgs e )
+        private void OnMovieAdd( object sender, EventArgs e )
         {
-            var child = new MovieDetail();
-            var result = child.ShowDialog();
+            var child = new MovieDetailForm();
+            if (child.ShowDialog() != DialogResult.OK)
+                return;
+
+            //TODO: Save Movie
+            _movie = child.Movie;
         }
 
-        private void miMoviesEdit_Click( object sender, EventArgs e )
+        private void OnMovieEdit( object sender, EventArgs e )
         {
-            var child = new MovieDetail();
-            var result = child.ShowDialog();
+            if (_movie == null)
+            {
+                MessageBox.Show("No movie defined YET!", "Error");
+                return;
+            }
+                
+            var child = new MovieDetailForm();
+            child.Movie = _movie;
+            if (child.ShowDialog() != DialogResult.OK)
+                return;
+
+            //TODO: Save Movie
+            _movie = child.Movie;
         }
 
-        private void miMoviesDelete_Click( object sender, EventArgs e )
+        private void OnMovieDelete( object sender, EventArgs e )
         {
-            var child = new MovieDetail();
-            var result =child.ShowDialog();
+            if (_movie == null)
+            {
+                MessageBox.Show("No movie defined YET!", "Error");
+                return;
+            }
+               
+            if (MessageBox.Show($"Are you sure you want to delete '{_movie.Title}'?",
+                                 "Delete",
+                                 MessageBoxButtons.YesNo, 
+                                 MessageBoxIcon.Question) == DialogResult.OK)
+                return;
+
+            //TODO: Delete movie
+            _movie = null;
         }
 
-        private void miHelpAbout_Click( object sender, EventArgs e )
+        private void OnHelpAbout( object sender, EventArgs e )
         {
-            var aboutForm = new MovieDetail();
-            aboutForm.ShowDialog();
+            var about = new AboutForm();
+            about.ShowDialog();
         }
 
-        private void miFileExit_Click( object sender, EventArgs e )
+        private void OnFileExit( object sender, EventArgs e )
         {
             Close();
         }
+
+        private Movie _movie;
     }
 }
