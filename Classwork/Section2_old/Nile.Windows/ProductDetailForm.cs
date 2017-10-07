@@ -41,8 +41,6 @@ namespace Nile.Windows
                 _txtPrice.Text = Product.Price.ToString();
                 _chkDiscontinued.Checked = Product.IsDiscontinued;
             };
-
-            ValidateChildren();
         }
 
         /// <summary>Gets or sets the product being shown.</summary>
@@ -61,16 +59,11 @@ namespace Nile.Windows
 
         private void OnSave( object sender, EventArgs e )
         {
-            if (!ValidateChildren())
-            {
-                return;
-            };
-
             var product = new Product();
             product.Name = _txtName.Text;
             product.Description = _txtDescription.Text;
 
-            product.Price = GetPrice(_txtPrice);
+            product.Price = GetPrice();
             product.IsDiscontinued = _chkDiscontinued.Checked;
 
             //Add validation
@@ -87,39 +80,42 @@ namespace Nile.Windows
             Close();
         }
 
-        private decimal GetPrice ( TextBox control )
+        private decimal GetPrice ( )
         {
-            if (Decimal.TryParse(control.Text, out decimal price))
+            if (Decimal.TryParse(_txtPrice.Text, out decimal price))
                 return price;
 
-            //Validate price            
-            return -1;
+            //TODO: Validate price            
+            return 0;
         }
 
         private void ProductDetailForm_FormClosing( object sender, FormClosingEventArgs e )
         {
+            //Please no
+            //var form = (Form)sender;
 
-        }
+            //Please yes
+            var form = sender as Form;
 
-        private void OnValidatingPrice( object sender, CancelEventArgs e )
-        {
-            var tb = sender as TextBox;
-
-            if (GetPrice(tb) < 0)
+            //casting for value types
+            if (sender is int)
             {
+                var intValue2 = (int)sender;
+            };
+
+            //Pattern matching
+            if (sender is int intValue)
+            {
+
+            };
+
+            if (MessageBox.Show(this, "Are you sure?", "Closing", MessageBoxButtons.YesNo) == DialogResult.No)
                 e.Cancel = true;
-                _errors.SetError(_txtPrice, "Price must be >= 0.");
-            } else
-                _errors.SetError(_txtPrice, "");
         }
 
-        private void OnValidatingName( object sender, CancelEventArgs e )
+        private void ProductDetailForm_FormClosed( object sender, FormClosedEventArgs e )
         {
-            var tb = sender as TextBox;
-            if (String.IsNullOrEmpty(tb.Text))
-                _errors.SetError(tb, "Name is required");
-            else
-                _errors.SetError(tb, "");
+
         }
     }
 }
