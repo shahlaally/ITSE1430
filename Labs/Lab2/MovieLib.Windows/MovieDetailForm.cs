@@ -72,20 +72,20 @@ namespace MovieLib.Windows
         {
             var tb = sender as TextBox;
             if (GetDuration(tb) < 0)
-            //{
+            {
                 e.Cancel = true;
-                //_errors.SetError(txtDuration, "Duration of movie must be > 0")
-            //} //else
-                //_errors.SetError(txtDuration, "");
+                _errors.SetError(txtDuration, "Duration of movie must be > 0");
+            } else
+                _errors.SetError(txtDuration, "");
         }
 
         private void OnValidatingTitle( object sender, CancelEventArgs e )
         {
             var tb = sender as TextBox;
-            //if (String.IsNullOrEmpty(tb.Text))
-            //    _errors.SetError(tb, "Title is required")
-            // else
-            //    _errors.SetError(tb, "");
+            if (String.IsNullOrEmpty(tb.Text))
+                _errors.SetError(tb, "Title is required");
+            else
+                _errors.SetError(tb, "");
 
         }
     }

@@ -8,8 +8,15 @@ namespace Nile.Windows
         public MainForm()
         {
             InitializeComponent();
-        }       
-    
+        }
+
+        protected override void OnLoad( EventArgs e )
+        {
+            base.OnLoad(e);
+
+            var products = _database.GetAll();
+        }
+
         private void OnFileExit( object sender, EventArgs e )
         {
             Close();
@@ -27,17 +34,20 @@ namespace Nile.Windows
 
         private void OnProductEdit( object sender, EventArgs e )
         {
+            var product = _database.Get();
             var child = new ProductDetailForm("Product Details");
             child.Product = _product;
             if (child.ShowDialog(this) != DialogResult.OK)
                 return;
 
             //TODO: Save product
-            _product = child.Product;
+            _database.Update(product);
+            //_product = child.Product;
         }
 
         private void OnProductDelete( object sender, EventArgs e )
         {
+            var product = _database.Get();
             if (_product == null)
                 return;
 
@@ -47,6 +57,7 @@ namespace Nile.Windows
                 return;
 
             //TODO: Delete product
+            _database.Remove(product);
             _product = null;
         }
 
@@ -65,6 +76,7 @@ namespace Nile.Windows
             functionToCall(this, EventArgs.Empty);
         }
 
-        private Product _product;        
+        private Product _product;       
+        private ProductDatabase _database = 
     }
 }
