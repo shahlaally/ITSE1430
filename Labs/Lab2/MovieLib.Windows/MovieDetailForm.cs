@@ -40,7 +40,7 @@ namespace MovieLib.Windows
             var movie = new Movie();
             movie.Title = txtTitle.Text;
             movie.Description = txtDescription.Text;
-            movie.Duration = GetDuration(txtDuration);
+            movie.Duration = GetInt32(txtDuration);
             movie.Owned = chkOwned.Checked;
 
             Movie = movie;
@@ -53,7 +53,7 @@ namespace MovieLib.Windows
             MessageBox.Show(message, title, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private int GetDuration( TextBox textbox )
+        private int GetInt32( TextBox textbox )
         {
             if (Int32.TryParse(textbox.Text, out int duration))
                 return duration;
@@ -71,10 +71,10 @@ namespace MovieLib.Windows
         private void OnValidatingDuration( object sender, CancelEventArgs e )
         {
             var tb = sender as TextBox;
-            if (GetDuration(tb) < 0)
+            if (GetInt32(tb) < 0)
             {
                 e.Cancel = true;
-                _errors.SetError(txtDuration, "Duration of movie must be > 0");
+                _errors.SetError(txtDuration, "Length of movie must be >= 0");
             } else
                 _errors.SetError(txtDuration, "");
         }
@@ -83,7 +83,10 @@ namespace MovieLib.Windows
         {
             var tb = sender as TextBox;
             if (String.IsNullOrEmpty(tb.Text))
+            {
+                e.Cancel = true;
                 _errors.SetError(tb, "Title is required");
+            }             
             else
                 _errors.SetError(tb, "");
 

@@ -19,6 +19,7 @@ namespace MovieLib
         }
 
         /// <summary>Gets or sets description</summary>
+        /// <value>Never returns null</value>
         public string Description
         {
             get { return _description ?? ""; }
