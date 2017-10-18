@@ -5,10 +5,10 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Nile.Windows")]
+[assembly: AssemblyTitle("Nile")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("TCCD")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("Nile")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8f5366fa-58d9-4dd3-89c7-66975a72f676")]
+[assembly: Guid("c3808077-f040-431a-9ffd-ae09638520ba")]
 
 // Version information for an assembly consists of the following four values:
 //
