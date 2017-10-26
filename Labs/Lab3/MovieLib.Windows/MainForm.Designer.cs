@@ -48,7 +48,7 @@
             this.miHelp});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(684, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(635, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -63,7 +63,7 @@
             // miFileExit
             // 
             this.miFileExit.Name = "miFileExit";
-            this.miFileExit.Size = new System.Drawing.Size(152, 22);
+            this.miFileExit.Size = new System.Drawing.Size(92, 22);
             this.miFileExit.Text = "&Exit";
             this.miFileExit.Click += new System.EventHandler(this.OnFileExit);
             // 
@@ -80,21 +80,21 @@
             // miMoviesAdd
             // 
             this.miMoviesAdd.Name = "miMoviesAdd";
-            this.miMoviesAdd.Size = new System.Drawing.Size(152, 22);
+            this.miMoviesAdd.Size = new System.Drawing.Size(107, 22);
             this.miMoviesAdd.Text = "&Add";
             this.miMoviesAdd.Click += new System.EventHandler(this.OnMovieAdd);
             // 
             // miMoviesEdit
             // 
             this.miMoviesEdit.Name = "miMoviesEdit";
-            this.miMoviesEdit.Size = new System.Drawing.Size(152, 22);
+            this.miMoviesEdit.Size = new System.Drawing.Size(107, 22);
             this.miMoviesEdit.Text = "&Edit";
             this.miMoviesEdit.Click += new System.EventHandler(this.OnMovieEdit);
             // 
             // miMoviesDelete
             // 
             this.miMoviesDelete.Name = "miMoviesDelete";
-            this.miMoviesDelete.Size = new System.Drawing.Size(152, 22);
+            this.miMoviesDelete.Size = new System.Drawing.Size(107, 22);
             this.miMoviesDelete.Text = "&Delete";
             this.miMoviesDelete.Click += new System.EventHandler(this.OnMovieDelete);
             // 
@@ -109,7 +109,7 @@
             // miHelpAbout
             // 
             this.miHelpAbout.Name = "miHelpAbout";
-            this.miHelpAbout.Size = new System.Drawing.Size(152, 22);
+            this.miHelpAbout.Size = new System.Drawing.Size(107, 22);
             this.miHelpAbout.Text = "&About";
             this.miHelpAbout.Click += new System.EventHandler(this.OnHelpAbout);
             // 
@@ -117,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 361);
+            this.ClientSize = new System.Drawing.Size(635, 350);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";

@@ -74,6 +74,7 @@ namespace MovieLib.Windows
             Close();
         }
 
+        //private IMovieDatabase _database = new MovieLib.Stores.InMemoryMovieDatabase();
         private Movie _movie;
     }
 }

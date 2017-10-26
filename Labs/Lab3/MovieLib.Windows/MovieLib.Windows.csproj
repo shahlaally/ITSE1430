@@ -57,6 +57,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainGridForm.Designer.cs">
+      <DependentUpon>MainGridForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MovieDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainGridForm.resx">
+      <DependentUpon>MainGridForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MovieDetailForm.resx">
       <DependentUpon>MovieDetailForm.cs</DependentUpon>

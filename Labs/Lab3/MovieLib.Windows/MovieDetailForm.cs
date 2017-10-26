@@ -41,7 +41,7 @@ namespace MovieLib.Windows
             movie.Title = txtTitle.Text;
             movie.Description = txtDescription.Text;
             movie.Duration = GetInt32(txtDuration);
-            movie.Owned = chkOwned.Checked;
+            movie.IsOwned = chkOwned.Checked;
 
             Movie = movie;
             DialogResult = DialogResult.OK;
