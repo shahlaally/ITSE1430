@@ -3,15 +3,20 @@
  * ITSE 1430
  */
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Nile.Host
+//namespace Nile
+//{
+//    //Nile.Why
+//    namespace Why
+//    {
+//    }
+//}
+
+namespace Nile.Host 
 {
-    class Program
+    class Program 
     {
-        static void Main( string[] args )
+        static void Main ( string[] args )
         {
             bool quit = false;
             do
@@ -20,25 +25,19 @@ namespace Nile.Host
                 switch (choice)
                 {
                     case 'a':
-                    case 'A':
-                        AddProduct();
-                        break;
+                    case 'A': AddProduct(); break;
 
                     case 'l':
-                    case 'L':
-                        ListProducts();
-                        break;
+                    case 'L': ListProducts(); break;
 
                     case 'q':
-                    case 'Q':
-                        quit = true;
-                        break;
+                    case 'Q': quit = true; break;
                 };
             } while (!quit);
         }
 
         private static void AddProduct()
-        {
+        {            
             Console.Write("Enter product name: ");
             productName = Console.ReadLine().Trim();
 
@@ -68,12 +67,12 @@ namespace Nile.Host
 
             //Option 3
             string msg = $"{productName}\t\t\t${productPrice}\t\t{(productDiscontinued ? "[Discontinued]" : "")}";
-
+                        
             Console.WriteLine(msg);
-            Console.WriteLine(productDescription);
-        }
+            Console.WriteLine(productDescription);            
+        }        
 
-        static char GetInput()
+        static char GetInput ()
         {
             while (true)
             {
@@ -137,7 +136,7 @@ namespace Nile.Host
 
             //Verbatim string - no escape sequences
             string path = @"C:\Temp\test.txt";
-
+                        
             //String formatting - John worked 10 hours
 
             //Option 1
@@ -170,10 +169,8 @@ namespace Nile.Host
                 {
                     switch (Char.ToUpper(input[0]))
                     {
-                        case 'Y':
-                            return true;
-                        case 'N':
-                            return false;
+                        case 'Y': return true;
+                        case 'N': return false;
                     };
                 };
 
@@ -183,7 +180,7 @@ namespace Nile.Host
 
         /// <summary>Reads a decimal from Console.</summary>
         /// <returns>The decimal value.</returns>
-        static decimal ReadDecimal()
+        static decimal ReadDecimal ()
         {
             do
             {
@@ -197,7 +194,7 @@ namespace Nile.Host
             } while (true);
         }
 
-        static string ReadString( string errorMessage, bool allowEmpty )
+        static string ReadString ( string errorMessage, bool allowEmpty )
         {
             //if (errorMessage == null)
             //errorMessage = "Enter a valid string";
