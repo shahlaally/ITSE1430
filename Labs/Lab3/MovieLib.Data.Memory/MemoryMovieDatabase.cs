@@ -148,6 +148,7 @@ namespace MovieLib.Data.Memory
                 Id = movie.Id,
                 Title = movie.Title,
                 Description = movie.Description,
+                Duration = movie.Duration,
                 IsOwned = movie.IsOwned
             };
 
