@@ -7,8 +7,7 @@ using System.Threading.Tasks;
 
 namespace MovieLib
 {
-    /// <summary>Validate Object.</summary>
-    public class ObjectValidator
+    public static class ObjectValidator
     {
         public static bool TryValidate (IValidatableObject value, out IEnumerable<ValidationResult> errors)
         {

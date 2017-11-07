@@ -25,7 +25,7 @@ namespace MovieLib.Windows
                 txtTitle.Text = Movie.Title;
                 txtDescription.Text = Movie.Description;
                 txtDuration.Text = Movie.Duration.ToString();
-                chkOwned.Checked = Movie.Owned;
+                chkOwned.Checked = Movie.IsOwned;
             };
 
             ValidateChildren();
@@ -37,11 +37,22 @@ namespace MovieLib.Windows
         {
             if (!ValidateChildren())
                 return;
+
+            //Object initializer syntax
             var movie = new Movie();
+            movie.Id = Movie?.Id ?? 0;
             movie.Title = txtTitle.Text;
             movie.Description = txtDescription.Text;
             movie.Duration = GetInt32(txtDuration);
             movie.IsOwned = chkOwned.Checked;
+
+            //Using InvalidatableObject
+            if (!ObjectValidator.TryValidate(movie, out var errors))
+            {
+                //Show the error
+                ShowError("Not valid", "Validation Error");
+                return;
+            };
 
             Movie = movie;
             DialogResult = DialogResult.OK;

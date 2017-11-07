@@ -1,32 +1,34 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace MovieLib
 {
-    /// <summary>Provides a database of movies.</summary>
     public interface IMovieDatabase
     {
         /// <summary>Adds a movie.</summary>
         /// <param name="movie">The movie to add.</param>
-        /// <returns>The added movie</returns>
-        Movie Add( Movie movie );
+        /// <returns>The added movie.</returns>
+        Movie Add(Movie movie);
+
+        /// <summary>Get a specific movie.</summary>
+        /// <param name="id">The movie to get.</param>
+        /// <returns>The movie if it exists.</returns>
+        Movie Get(int id);
 
         /// <summary>Gets all movies.</summary>
         /// <returns>All the movies.</returns>
-        IEnumerable<Movie> GetAllCore();
+        IEnumerable<Movie> GetAll();
 
-        /// <summary>Get a specific movie.</summary>
-        /// <param name="id"></param>
-        /// <returns>The product if it exists.</returns>
-        Movie Get( int id );
-
-        /// <summary>Removes the product.</summary>
-        /// <param name="id">The product to remove.</param>
-        void Remove( int id );
+        /// <summary>Removes the movie.</summary>
+        /// <param name="id">The movie to remove.</param>
+        void Remove(int id);
 
         /// <summary>Updates a movie.</summary>
-        /// <param name="existing"></param>
         /// <param name="movie">The movie to update.</param>
         /// <returns>The updated movie.</returns>
-        Movie Update( Movie existing, Movie movie );
+        Movie Update(Movie movie);
     }
 }

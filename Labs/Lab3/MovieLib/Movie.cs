@@ -11,8 +11,9 @@ namespace MovieLib
     /// <remarks>This will represent the fields and properties of the class</remarks>
     public class Movie : IValidatableObject
     {
-        /// <summary>Gets or sets the unique identifier.</summary>
+        /// <summary>Gets or Sets the unique identifier.</summary>
         public int Id { get; set; }
+
         /// <summary>Get or sets the title</summary>
         /// <value>Never returns null</value>
         public string Title
@@ -35,27 +36,18 @@ namespace MovieLib
         /// <summary>Determines if owned.</summary>
         public bool IsOwned { get; set; }
 
-        public override string ToString()
-        {
-            return Title;
-        }
-
-        /// <summary>Validates the object.</summary>
-        /// <param name="validationContext"></param>
-        /// <returns>The error message or null.</returns>
-        public IEnumerable<ValidationResult> Validate (ValidationContext validationContext)
-        {
-            //Name cannot be empty
-            if(String.IsNullOrEmpty(Title))
-                yield return new ValidationResult("Title cannot be empty", new[] { nameof(Title) });
-
-            //Duration >= 0
-            if (Duration < 0)
-                yield return new ValidationResult("", new[] { nameof(Duration)});
-        }
-
         /// <summary>fields that can be null</summary>
         private string _title;
         private string _description;
+
+        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
+        {
+            //Title cannot be empty
+            if (String.IsNullOrEmpty(Title))
+                yield return new ValidationResult("Title cannot be empty", new[] {nameof(Title) });
+
+            if (Duration < 0)
+                yield return new ValidationResult("", new[] { nameof(Duration)});
+        }
     }
 }

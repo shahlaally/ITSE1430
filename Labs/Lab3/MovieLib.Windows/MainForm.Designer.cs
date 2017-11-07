@@ -11,7 +11,7 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose( bool disposing )
+        protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
             {
@@ -28,103 +28,183 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.miFile = new System.Windows.Forms.ToolStripMenuItem();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miFileExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.miMovies = new System.Windows.Forms.ToolStripMenuItem();
-            this.miMoviesAdd = new System.Windows.Forms.ToolStripMenuItem();
-            this.miMoviesEdit = new System.Windows.Forms.ToolStripMenuItem();
-            this.miMoviesDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.miHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.moviesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miMovieAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.miMovieEdit = new System.Windows.Forms.ToolStripMenuItem();
+            this.miMovieRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.miHelpAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._dgvMovies = new System.Windows.Forms.DataGridView();
+            this._bsMovies = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.titleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.durationDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isOwnedDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._dgvMovies)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsMovies)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miFile,
-            this.miMovies,
-            this.miHelp});
+            this.fileToolStripMenuItem,
+            this.moviesToolStripMenuItem,
+            this.miHelpAbout});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(635, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(453, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // miFile
+            // fileToolStripMenuItem
             // 
-            this.miFile.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miFileExit});
-            this.miFile.Name = "miFile";
-            this.miFile.Size = new System.Drawing.Size(37, 20);
-            this.miFile.Text = "&File";
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
             // 
             // miFileExit
             // 
             this.miFileExit.Name = "miFileExit";
             this.miFileExit.Size = new System.Drawing.Size(92, 22);
-            this.miFileExit.Text = "&Exit";
+            this.miFileExit.Text = "Exit";
             this.miFileExit.Click += new System.EventHandler(this.OnFileExit);
             // 
-            // miMovies
+            // moviesToolStripMenuItem
             // 
-            this.miMovies.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miMoviesAdd,
-            this.miMoviesEdit,
-            this.miMoviesDelete});
-            this.miMovies.Name = "miMovies";
-            this.miMovies.Size = new System.Drawing.Size(57, 20);
-            this.miMovies.Text = "&Movies";
+            this.moviesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miMovieAdd,
+            this.miMovieEdit,
+            this.miMovieRemove});
+            this.moviesToolStripMenuItem.Name = "moviesToolStripMenuItem";
+            this.moviesToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.moviesToolStripMenuItem.Text = "Movie";
             // 
-            // miMoviesAdd
+            // miMovieAdd
             // 
-            this.miMoviesAdd.Name = "miMoviesAdd";
-            this.miMoviesAdd.Size = new System.Drawing.Size(107, 22);
-            this.miMoviesAdd.Text = "&Add";
-            this.miMoviesAdd.Click += new System.EventHandler(this.OnMovieAdd);
+            this.miMovieAdd.Name = "miMovieAdd";
+            this.miMovieAdd.Size = new System.Drawing.Size(117, 22);
+            this.miMovieAdd.Text = "Add";
+            this.miMovieAdd.Click += new System.EventHandler(this.OnMovieAdd);
             // 
-            // miMoviesEdit
+            // miMovieEdit
             // 
-            this.miMoviesEdit.Name = "miMoviesEdit";
-            this.miMoviesEdit.Size = new System.Drawing.Size(107, 22);
-            this.miMoviesEdit.Text = "&Edit";
-            this.miMoviesEdit.Click += new System.EventHandler(this.OnMovieEdit);
+            this.miMovieEdit.Name = "miMovieEdit";
+            this.miMovieEdit.Size = new System.Drawing.Size(117, 22);
+            this.miMovieEdit.Text = "Edit";
+            this.miMovieEdit.Click += new System.EventHandler(this.OnMovieEdit);
             // 
-            // miMoviesDelete
+            // miMovieRemove
             // 
-            this.miMoviesDelete.Name = "miMoviesDelete";
-            this.miMoviesDelete.Size = new System.Drawing.Size(107, 22);
-            this.miMoviesDelete.Text = "&Delete";
-            this.miMoviesDelete.Click += new System.EventHandler(this.OnMovieDelete);
-            // 
-            // miHelp
-            // 
-            this.miHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miHelpAbout});
-            this.miHelp.Name = "miHelp";
-            this.miHelp.Size = new System.Drawing.Size(44, 20);
-            this.miHelp.Text = "&Help";
+            this.miMovieRemove.Name = "miMovieRemove";
+            this.miMovieRemove.Size = new System.Drawing.Size(117, 22);
+            this.miMovieRemove.Text = "Remove";
+            this.miMovieRemove.Click += new System.EventHandler(this.OnMovieDelete);
             // 
             // miHelpAbout
             // 
+            this.miHelpAbout.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.aboutToolStripMenuItem});
             this.miHelpAbout.Name = "miHelpAbout";
-            this.miHelpAbout.Size = new System.Drawing.Size(107, 22);
-            this.miHelpAbout.Text = "&About";
-            this.miHelpAbout.Click += new System.EventHandler(this.OnHelpAbout);
+            this.miHelpAbout.Size = new System.Drawing.Size(44, 20);
+            this.miHelpAbout.Text = "Help";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.OnHelpAbout);
+            // 
+            // _dgvMovies
+            // 
+            this._dgvMovies.AllowUserToAddRows = false;
+            this._dgvMovies.AllowUserToDeleteRows = false;
+            this._dgvMovies.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LightGray;
+            this._dgvMovies.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this._dgvMovies.AutoGenerateColumns = false;
+            this._dgvMovies.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._dgvMovies.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.titleDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.durationDataGridViewTextBoxColumn,
+            this.isOwnedDataGridViewCheckBoxColumn});
+            this._dgvMovies.DataSource = this._bsMovies;
+            this._dgvMovies.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._dgvMovies.Location = new System.Drawing.Point(0, 24);
+            this._dgvMovies.Name = "_dgvMovies";
+            this._dgvMovies.ReadOnly = true;
+            this._dgvMovies.RowHeadersVisible = false;
+            this._dgvMovies.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this._dgvMovies.Size = new System.Drawing.Size(453, 302);
+            this._dgvMovies.TabIndex = 1;
+            this._dgvMovies.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this._dgvMovies_CellContentClick);
+            this._dgvMovies.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.OnEditRow);
+            this._dgvMovies.KeyDown += new System.Windows.Forms.KeyEventHandler(this.OnKeyDownGrid);
+            // 
+            // _bsMovies
+            // 
+            this._bsMovies.DataSource = typeof(MovieLib.Movie);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // titleDataGridViewTextBoxColumn
+            // 
+            this.titleDataGridViewTextBoxColumn.DataPropertyName = "Title";
+            this.titleDataGridViewTextBoxColumn.HeaderText = "Title";
+            this.titleDataGridViewTextBoxColumn.Name = "titleDataGridViewTextBoxColumn";
+            this.titleDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "Description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // durationDataGridViewTextBoxColumn
+            // 
+            this.durationDataGridViewTextBoxColumn.DataPropertyName = "Duration";
+            this.durationDataGridViewTextBoxColumn.HeaderText = "Duration";
+            this.durationDataGridViewTextBoxColumn.Name = "durationDataGridViewTextBoxColumn";
+            this.durationDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isOwnedDataGridViewCheckBoxColumn
+            // 
+            this.isOwnedDataGridViewCheckBoxColumn.DataPropertyName = "IsOwned";
+            this.isOwnedDataGridViewCheckBoxColumn.HeaderText = "IsOwned";
+            this.isOwnedDataGridViewCheckBoxColumn.Name = "isOwnedDataGridViewCheckBoxColumn";
+            this.isOwnedDataGridViewCheckBoxColumn.ReadOnly = true;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(635, 350);
+            this.ClientSize = new System.Drawing.Size(453, 326);
+            this.Controls.Add(this._dgvMovies);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Movies Menu";
+            this.Text = "Movie Menu";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._dgvMovies)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._bsMovies)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,13 +213,20 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem miFile;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miFileExit;
-        private System.Windows.Forms.ToolStripMenuItem miMovies;
-        private System.Windows.Forms.ToolStripMenuItem miMoviesAdd;
-        private System.Windows.Forms.ToolStripMenuItem miMoviesEdit;
-        private System.Windows.Forms.ToolStripMenuItem miMoviesDelete;
-        private System.Windows.Forms.ToolStripMenuItem miHelp;
+        private System.Windows.Forms.ToolStripMenuItem moviesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miMovieAdd;
+        private System.Windows.Forms.ToolStripMenuItem miMovieEdit;
+        private System.Windows.Forms.ToolStripMenuItem miMovieRemove;
         private System.Windows.Forms.ToolStripMenuItem miHelpAbout;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.DataGridView _dgvMovies;
+        private System.Windows.Forms.BindingSource _bsMovies;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn titleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn durationDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isOwnedDataGridViewCheckBoxColumn;
     }
 }
