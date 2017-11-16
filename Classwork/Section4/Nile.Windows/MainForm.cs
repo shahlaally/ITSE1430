@@ -27,7 +27,7 @@ namespace Nile.Windows
 
             //Use the extension Luke
             //ProductDatabaseExtensions.WithSeedData(_database);
-            _database.WithSeedData();
+            //_database.WithSeedData();
 
             _gridProducts.AutoGenerateColumns = false;
 
