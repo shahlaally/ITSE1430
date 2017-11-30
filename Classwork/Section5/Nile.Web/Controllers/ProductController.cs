@@ -9,8 +9,13 @@ namespace Nile.Web.Controllers
 {
     public class ProductController : Controller
     {
+        public ProductController () : this(GetDatabase())
+        {
+
+        }
+
         // GET: Product
-        public ActionResult Index()
+        public ActionResult List()
         {
             var model = new List<ProductViewModel> {
                 new ProductViewModel() {Id = 1, Name = "Product A", Price = 123}
