@@ -164,6 +164,9 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\Add.cshtml" />
+    <Content Include="Views\Product\Delete.cshtml" />
+    <Content Include="Views\Product\Edit.cshtml" />
     <Content Include="Views\Product\List.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +184,16 @@
   <ItemGroup>
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Niles.Stores.Sql\Niles.Stores.Sql.csproj">
+      <Project>{CD76F296-9603-4D73-AE4A-8F07C813668E}</Project>
+      <Name>Niles.Stores.Sql</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Nile\Nile.csproj">
+      <Project>{93BD7A37-01A9-498D-8479-67BEF715EA20}</Project>
+      <Name>Nile</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
