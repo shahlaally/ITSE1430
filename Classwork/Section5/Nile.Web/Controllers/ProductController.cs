@@ -6,11 +6,13 @@ using System.Web;
 using System.Web.Mvc;
 using Nile.Web.Models;
 using Nile.Stores.Sql;
+using System.ComponentModel;
 
 namespace Nile.Web.Controllers
 {
     public class ProductController : Controller
     {
+        [DescriptionAttribute()]
         public ProductController () : this(GetDatabase())
         {
 
@@ -21,15 +23,22 @@ namespace Nile.Web.Controllers
             _database = database;
         }
 
-        // GET: Product
-        public ActionResult Add ()
+        public ActionResult Add()
         {
-            var model = new List<ProductViewModel>() {
-                new ProductViewModel() {Id = 1, Name = "Product A", Price = 123}
-            };
+
+            return View();
+        }
+
+        // GET: Product
+        public ActionResult Add (ProductViewModel model)
+        {
+            //var model = new List<ProductViewModel>() {
+            // new ProductViewModel() {Id = 1, Name = "Product A", Price = 123}
+            //};
             //var model = new ProductViewModel();
 
-            return View(model);
+            _database.Add(model.ToDomain());
+            return RedirectToAction("List");
         }
 
         public ActionResult Delete (int id)

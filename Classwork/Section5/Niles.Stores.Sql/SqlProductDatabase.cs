@@ -132,7 +132,7 @@ namespace Nile.Stores.Sql
 
         private SqlConnection OpenDatabase()
         {
-            var connection = new SqlConnection();
+            var connection = new SqlConnection(_connectionStriong);
             connection.Open();
             return connection;
         }
